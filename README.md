@@ -13,7 +13,7 @@ Create an instance of JointManager specifying the motion proxy, update interval 
 
     manager = JointManager(motion, 0.1, True)
     
-You can then ask the Joint Manager for a specify joint
+You can then ask the Joint Manager for a specific joint
 
     rsp = manager.get_joint('RShoulderPitch')
     
