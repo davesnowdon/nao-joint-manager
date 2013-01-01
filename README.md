@@ -15,10 +15,23 @@ Create an instance of JointManager specifying the motion proxy, update interval 
     
 You can then ask the Joint Manager for a specific joint
 
-    rsp = manager.get_joint('RShoulderPitch')
+    joint = manager.get_joint('RShoulderPitch')
+    
+You can get the current joint name using joint.name and the angle using joint.angle
     
 Ask the joint to notify you when the joint angle changes
 
-    rsp.attach(self)
+    joint.attach(observer)
+
+The observer object needs to have a method update accepting the modified joint as a parameter
+
+```python    
+class Observer():
+
+	# ...
     
-You can also get the current joint name using joint.name and the angle using joint.angle
+    def update(self, joint):
+        print joint.name + ' = ' + str(joint.angle)
+        
+    # ...
+```
