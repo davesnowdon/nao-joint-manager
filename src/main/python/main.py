@@ -27,8 +27,8 @@ tts = None
 class Reflex():
     def __init__(self, manager):
         self.manager = manager
-        lsp = self.manager.get_joint('RShoulderPitch')
-        lsp.attach(self)
+        rsp = self.manager.get_joint('RShoulderPitch')
+        rsp.attach(self)
     
     def update(self, joint):
         print joint.name + ' = ' + str(joint.angle)
