@@ -41,7 +41,7 @@ class Joint(Subject):
             self.notify()
 
 def do_update(manager, interval):
-    nextTime = time.time()
+    nextTime = time.time() + interval
     # run again if requested
     if manager.get_joint_angles():
         delay = nextTime - time.time()
