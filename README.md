@@ -5,9 +5,13 @@ Set of python classes to provide events on changes to NAO joint positions
 
 Usage
 =====
-Create a proxy for ALMotion, for example
+Create a proxy for ALMotion, for example:
+On robot as part of local application (or running in an application that is running an instance of ALBroker)
 
-    motion = ALProxy('ALMotion', '127.0.0.1', 9559)
+    motion = ALProxy('ALMotion')
+
+Running remotely (in remote application which does not have a local ALBroker instance running)
+    motion = ALProxy('ALMotion', YOUR_ROBOT_IP, 9559)
 
 Create an instance of JointManager specifying the motion proxy, update interval (in seconds) and whether to use sensor values or not
 
@@ -35,3 +39,5 @@ class Observer():
         
     # ...
 ```
+
+manager.start() starts the event loop running and manager.stop() stops it.
