@@ -11,6 +11,7 @@ On robot as part of local application (or running in an application that is runn
     motion = ALProxy('ALMotion')
 
 Running remotely (in remote application which does not have a local ALBroker instance running)
+
     motion = ALProxy('ALMotion', YOUR_ROBOT_IP, 9559)
 
 Create an instance of JointManager specifying the motion proxy, update interval (in seconds) and whether to use sensor values or not
